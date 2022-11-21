@@ -92,21 +92,36 @@ void displayList()
 int main()
 {
     int ch=1;
-    cout<<"press 1 to insert begging\n2.to insert after key\n3.to display\n 4.exit";
-    while(ch!=3)
+    int val,key;
+    cout<<"press 1 to insert begging\n2.to insert after key\n3.to display\n 4.exit\n";
+    while(ch!=4)
     {
-        
+         cout<<"Enter the choice:";
+        cin>>ch;
         switch(ch)
         {
-            case 
+            case 1:
+                cout<<"\nenter to insert at beggining:";
+                cin>>val;
+                insert(val);
+                break;
+            case 2:
+                 cout<<"enter the value:";
+                cin>>val;
+                cout<<"enter key to insert the given value:";
+                cin>>key;
+                insert_after_given_node(key,val);
+                break;
+            case 3:
+                displayList();
+                break;
+            case 4:
+                exit(1);
         }
-        
+       
         
     }
-    insert(10);
-    insert(20);
-    insert(30);
-    insert_after_given_node(10,40);
-    displayList();
+    
+    
     return 0;
 }
