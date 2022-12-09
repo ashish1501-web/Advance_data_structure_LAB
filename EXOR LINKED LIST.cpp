@@ -1,11 +1,4 @@
-/******************************************************************************
 
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
 #include <iostream>
 
 using namespace std;
@@ -73,6 +66,14 @@ void insert_after_given_node(int k,int val)
     }
 }
 
+void delet()
+{
+    node* ptr=head;
+    head=XOR(NULL,head->npx);
+    head->npx=XOR(NULL,XOR(ptr,head->npx));
+    free(ptr);
+}
+
 void displayList()
 {
     node* prev=NULL;
@@ -93,8 +94,8 @@ int main()
 {
     int ch=1;
     int val,key;
-    cout<<"press 1 to insert begging\n2.to insert after key\n3.to display\n 4.exit\n";
-    while(ch!=4)
+    cout<<"press 1 to insert begging\n2.to insert after key\n3.to display\n 4.delete\n5.exit\n";
+    while(ch!=5)
     {
          cout<<"Enter the choice:";
         cin>>ch;
@@ -116,6 +117,9 @@ int main()
                 displayList();
                 break;
             case 4:
+                delet();
+                break;
+            case 5:
                 exit(1);
         }
        
